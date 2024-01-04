@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0b0b0c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+ul li{
+    position: relative;
+    list-style: none;
+}
+
+ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+    font-size: 3em;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+ul li:hover a{
+    text-shadow: 0px -2px red,
+    0px 2px cyan,
+    -2px 0px red,
+    2px 0px cyan;
+}
+
+ul li a::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+}
+
+ul li:hover a::before{
+    animation: animate 8ms ease-in-out infinite;
+}
+
+@keyframes animate{
+    0%, 100%{
+        top: -7px;
+        left: 0;
+        opacity: 0.5;
+    }
+    20%{
+        top: 0px;
+        left: -10;
+        opacity: 0.7;
+    }
+    40%{
+        top: 7px;
+        left: 0;
+        opacity: 0.2;
+    }
+    60%{
+        top: 0px;
+        left: 10px;
+        opacity: 0.3;
+    }
+    80%{
+        top: 0;
+        left: 0;
+        opacity: 0.9;
+    }
+}
